@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PHP Exercises with Forms</title>
+<style>
+body {
+background-color: #0d117;
+color: #e6edf3;
+font-family: "Segoe UI", Arial, sans-seris;
+margin: 30px;
+}
+h1 {
+color: whitesmoke;
+text-align: center;
+}
+section {
+background: #161b22;
+border-radius: 12px;
+padding: 15px 20px;
+margin-bottom: 20px;
+box-shadow: 0 0 10px rgba(88,166,255,0.2);
+}
+strong {
+color: cyan;
+}
+input,select {
+margin: 5px 0;
+padding: 5px;
+border-radius: 6px;
+border: none;
+}
+input[type="submit"] {
+background-color: #238636;
+color: white;
+cursor: pointer;
+}
+hr {
+border: none;
+border-top: 1px solid #30363d;
+margin: 15px 0;
+}
+</style>
+</head>
+<body>
+
+<h1>PHP Activity (with Forms)</h1>
+
+
+<section>
+<strong>1. Introduce Yourself</strong><br>
+<form method="POST">
+Name: <input type="text" name="fullName"><br>
+Age: <input type="number" name="myAge"><br>
+Favorite Color: <input type="text" name="colorFav"><br>
+<input type="submit" name="introSubmit" value="Show Introduction">
+</form>
+<?php
+if(isset($_POST['introSubmit'])) {
+$fullName = $_POST['fullName'];
+$myAge = $_POST['myAge'];
+$colorFav = $_POST['colorFav'];
+echo "Hello! My name is <strong>$fullName</strong>, I'm <strong>$myAge</strong> years old, and my favorite color is <strong>$colorFav</strong>.";
+}
+?>
+</section>
+
+
+<section>
+<strong>2. Simple Math</strong><br>
+<form method="POST">
+X: <input type="number" name="x">
+Y: <input type="number" name="y">
+<input type="submit" name="mathSubmit" value="Calculate">
+</form>
+<?php
+if(isset($_POST['mathSubmit'])) {
+$x = $_POST['x'];
+$y = $_POST['y'];
+echo "Sum: ". ($x + $y) . "<br>";
+echo "Different: ". ($x - $y) . "<br>";
+echo "Product: ". ($x * $y) . "<br>";
+echo "Quotient: ". round($x / $y, 2);
+}
+?>
+</section>
+
+
+<section>
+<strong>3. Rectangle</strong><br>
+<form method="POST">
+Length: <input type="number" name="L">
+Width: <input type="number" name="W">
+<input type="submit" name="rectSubmit" value="Compute">
+</form>
+<?php
+if(isset($_POST['rectSubmit'])) {
+$L = $_POST['L'];
+$W = $_POST['W'];
+$A = $L * $W;
+$P = 2 * ($L + $W);
+echo "Area = $A square units<br>Perimeter = $P units";
+}
+?>
+</section>
+
+
+<section>
+<strong>4. Temperature Converter</strong><br>
+<form method="POST">
+Celsius: <input type="number" name="celsius">
+<input type="submit" name="tempSubmit" value="Convert">
+</form>
+<?php
+if(isset($_POST['tempSubmit'])) {
+$celsius = $_POST['celsius'];
+$fahrenheit = ($celsius * 9/5) + 32;
+echo "$celsius °F";
+}
+?>
+</section>
+
+
+<section>
+<strong>5. Swapping Values</strong><br>
+<form method="POST">
+First: <input type="number" name="first">
+Second: <input type="number" name="second">
+<input type="submit" name="swapSubmit" value="Swap">
+</form>
+<?php
+if(isset($_POST['swapSubmit'])) {
+$first = $_POST['first'];
+$second = $_POST['second'];
+$temp = $first;
+$first = $second;
+$second = $temp;
+echo "After swapping: first = $first, second = $second";
+}
+?>
+</section>
+
+
+<section>
+<strong>6. Salary Calculator</strong><br>
+<form method="POST">
+Basic: <input type="number" name="basic">
+Allowance: <input type="number" name="allow">
+Deduction: <input type="number" name="deduct">
+<input type="submit" name="salarySubmit" value="Calculate">
+</form>
+<?php
+if(isset($_POST['salarySubmit'])) {
+$net = $_POST['basic'] + $_POST['allow'] - $_POST['deduct'];
+echo "Net Salary = ₱" . number_format($net, 2);
+}
+?>
+</section>
+
+
+<section>
+<strong>7. BMI Calculator</strong><br>
+<form method="POST">
+Weight (kg): <input type="number" name="mass" step="0.1">
+Height (m): <input type="number" name="height" step="0.01">
+<input type="submit" name="bmiSubmit" value="Compute BMI">
+</form>
+<?php
+if(isset($_POST['bmiSubmit'])) {
+$bmi = $_POST['mass'] / ($_POST['height'] * $_POST['height']);
+echo "Your BMI is " . round($bmi, 2);
+}
+?>
+</section>
+
+
+<section>
+<strong>8. String Manipulation</strong><br>
+<form method="POST">
+Sentence: <input type="text" name="sentence" style="width:250px">
+<input type="submit" name="stringSubmit" value="Analyze">
+</form>
+<?php
+if(isset($_POST['stringSubmit'])) {
+$sentence = $_POST['sentence'];
+echo "Sentence: \"$sentence\"<br>;
+echo "Characters: " . strlen($sentence) . "<br>";
+echo "Words: " . str_word_count($sentence) . "<br>";
+echo "Uppercase: " . strtoupper($sentence) . "<br>";
+echo "Lowercase: " . strtolower($sentence) . "<br>";
+}
+?>
+</section>
+
+
+<section>
+<strong>9. Bank Account Simulation</strong><br>
+<form method="POST">
+Starting Balance: <input type="number" name="wallet">
+Deposit: <input type="number" name="add">
+withdraw: <input type="number" name="minus">
+<input type="submit" name="bankSubmit" value="Compute">
+</form>
+<?php
+if(isset($_POST['bankSubmit'])) {
+$newBalance = $_POST['wallet'] + $_POST['add'] -  $_POST['minus'];
+echo "New Balance: ₱" . number_format($newBalance, 2);
+}
+?>
+</section>
+
+<section>
+<strong>10. Grading System</strong><br>
+<form method="POST">
+Math: <input type="number" name="math">
+English: <input type="number" name="eng">
+Science: <input type="number" name="sci">
+<input type="submit" name="gradeSubmit" value="Compute Grade">
+</form>
+<?php
+if(isset($_POST['gradeSubmit'])) {
+$average = ($_POST['math'] + $_POST['eng'] + $_POST['sci']) / 3;
+if ($average >= 90) $grade = "A";
+elseif ($average >= 80) $grade = "B";
+elseif ($average >= 70) $grade = "C";
+else $grade = "D";
+echo "Average: " . round($average, 2) . "<br>Grade: $grade";
+}
+?>
+</section>
+
+</body>
+</html>
