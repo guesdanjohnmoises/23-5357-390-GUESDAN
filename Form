@@ -228,5 +228,45 @@ echo "Average: " . round($average, 2) . "<br>Grade: $grade";
 ?>
 </section>
 
+<!-- 11. Currency Converter -->
+<section>
+<strong>11.Currency Converter</strong><br>
+<form methods="POST">
+Amount in PHP: <input type="number" name="php>
+<input type="submit" name="currencySubmit" value="Convert">
+</form>
+<?php
+if(isset($_POST['currencySubmit'])) {
+$php = $_POST['php'];
+$usd_rate = 0.018;
+$eur_rate = 0.017;
+$jpy_rate = 2.65;
+echo "₱$php = $" . round($php * $usd_rate, 2) . "USD<br>";
+echo "₱$php = €" . round($php * eur_rate, 2) . "EUR<br>;
+echo "₱$php = ¥" . round($php * jpy_rate, 2) . "JPY<br>;
+}
+?>
+</section>
+
+<!-- 12. Travel Cost Estimator -->
+<section>12. Travel Cost Estimator</strong><br>
+<form method="POST">
+Distance (km): <input type="number" name="distance">
+Km per Liter: <input type="number" name="km_per_liter">
+Fuel Price (₱/L): <input type="number" name="price_per_liter">
+<input type="submit" name="travelSubmit" value="Estimate Cost">
+</form>
+<?php
+if(isset($_POST['travelSubmit'])) {
+$distance = $_POST['distance'];
+$km_per_liter = $_POST['km_per_liter'];
+$price_per_liter = $_POST['price_per_liter'];
+$cost = ($distance / $km_per_liter) * $price_per_liter;
+echo "Estimated Travel Cost: ₱" . number_format($cost, 2);
+}
+?>
+</section>
+
+<strong>
 </body>
 </html>
