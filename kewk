@@ -1,3 +1,25 @@
 CRUD THINGS
 http://localhost/phpmyadmin/
 open folder 
+SELECT * FROM USERS;
+('John Moises GUESDAN',guesdanjohnmoises@gmail.com','0912345678'),
+    '> ('Gatilowan Francis','gatilowan@gmail.com','09546456465457'),
+    '> ('aj raval','ajraval@gmail.com','094564564564'),
+    '> ('vivamax','vivamax@gmail.com','09415645645645'),
+    '> ('cristoball','cristobval@gmail.com','09456456465'),
+    '> ('uveuveuveu','uveuveuveu@gmail.com','09456456456'),
+    '> ('moises','moises@gmail.com','0945645645'),
+    '> ('uswald','uswald@gmail.com','09456456789'),
+    '> ('ngantoy','ngantoy@gmail.com','09456456458'),
+    '> ('redhorse','redhorse@gmail.com','0912345678'),
+    '> ('sanmiguel','sanmiguel@gmail.com','09789456123'),
+    '> ('bacardi','bacardi@gmail.com','0945678912'),
+    '> ('alfonso','alfonso@gmail.com','0978945613'),
+    '> ('ginbilog','ginbilog@gmail.com','09654898712'),
+    '> ('shembot','shembot@gmail.com','09321654789'),
+    '> ('alfacoke','alfacoke@gmail.com','09321654789'),
+    '> ('marlboro red','marlboro red@gmail.com','09456456456'),
+    '> ('marlboro blue','marlboro blue@gmail.com','09456123789'),
+    '> ('zed','zed@gmail.com','091645674895'),
+    '> ('UC','UC@gmail.com','09456456456645'),
+    '> SELECT * FROM users;
